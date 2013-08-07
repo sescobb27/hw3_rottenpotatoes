@@ -16,7 +16,14 @@ module NavigationHelpers
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
     when /^the movies page$/ then '/movies'
     when /^the edit page for \"(.*)\"$/ then "/movies/#{$1}/edit"
-    when /^the details page for \"(.*)\"$/ then "/movies/#{1}"
+      movie = Movie.find_by_title $1
+      "#{edit_movie_path movie}"
+    when /^the details page for \"(.*)\"$/ then
+      movie = Movie.find_by_title $1
+      "#{movie_path movie}"
+    when /^the Similar Movies page for \"(.*)\"/ then "/movies/same_director/#{$1.gsub(/ /, '%20')}"
+        
+        
         
       
 

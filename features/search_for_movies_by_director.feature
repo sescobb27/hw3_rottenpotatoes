@@ -2,7 +2,7 @@ Feature: search for movies by director
  
   As a movie buff
   So that I can find movies with my favorite director
-  I want to include and serach on director information in movies I enter
+  I want to include and search on director information in movies I enter
  
   Background: movies in database
    

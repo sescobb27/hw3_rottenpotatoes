@@ -26,7 +26,7 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   movie_names[0].should == e1 and movie_names[1].should == e2
 end
 
-Then /I should see all of the movies/ do
+Then /^I should see all of the movies$/ do
   rows = page.all 'table#movies tbody tr'
   rows.count.should == 10
 end
@@ -51,17 +51,7 @@ When /^I (un)?check the following ratings: (.*)$/ do |uncheck, rating_list|
   end
 end
 
-
-=begin
-When /^I go to the edit page for \"(.*)\"$/ do |page|
-  p page
-  movie = Movie.find_by_title page
-  visit path_to "edit page for #{movie.id}"
-end
-=end
 Then /^the director of \"(.*)\" should be \"(.*)\"$/ do |movie, director|
-  p "#{movie} #{director}"
-  movie = Movie.find_by_title(movie).where(director: director).first
-  p movie
+  movie = Movie.where(director: director, title: movie).first
   true unless movie.should_not == nil 
 end
