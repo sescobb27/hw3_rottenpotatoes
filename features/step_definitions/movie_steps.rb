@@ -35,7 +35,7 @@ end
 #  "When I uncheck the following ratings: PG, G, R"
 #  "When I check the following ratings: G"
 
-When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
+When /^I (un)?check the following ratings: (.*)$/ do |uncheck, rating_list|
   # HINT: use String#split to split up the rating_list, then
   #   iterate over the ratings and reuse the "When I check..." or
   #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
@@ -49,4 +49,19 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
       check "ratings_#{rating}"
     end
   end
+end
+
+
+=begin
+When /^I go to the edit page for \"(.*)\"$/ do |page|
+  p page
+  movie = Movie.find_by_title page
+  visit path_to "edit page for #{movie.id}"
+end
+=end
+Then /^the director of \"(.*)\" should be \"(.*)\"$/ do |movie, director|
+  p "#{movie} #{director}"
+  movie = Movie.find_by_title(movie).where(director: director).first
+  p movie
+  true unless movie.should_not == nil 
 end
