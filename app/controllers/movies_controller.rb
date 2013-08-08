@@ -34,9 +34,14 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @movie = Movie.create!(params[:movie])
-    flash[:notice] = "#{@movie.title} was successfully created."
-    redirect_to movies_path
+    @movie = Movie.new(params[:movie])
+    if @movie.save
+      flash[:notice] = "#{@movie.title} was successfully created."
+      redirect_to movies_path
+    else
+      flash[:notice] = "Unavailable to save movie"
+      render :new
+    end
   end
 
   def edit
@@ -55,6 +60,22 @@ class MoviesController < ApplicationController
     @movie.destroy
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
+  end
+
+  def same_director
+    p params
+    movie_director = Movie.select(:director).where(
+            'director != :director_name AND title = :movie_title',
+                { 
+                  director_name: '',
+                  movie_title: params[:title] 
+                }
+          ).first
+    @movies = Movie.find_all_by_director movie_director.director unless movie_director == nil
+    if @movies == nil or @movies.empty?
+      flash[:notice] = "'#{params[:title]}' has no director info"
+      redirect_to movies_path
+    end
   end
 
 end
