@@ -7,7 +7,6 @@ def on_new
 end
 
 describe MoviesController do
-
     describe "GET #index" do
         let!(:movies) { mock_model('Movie') }
         before(:each) do
@@ -82,8 +81,10 @@ describe MoviesController do
                 Movie.stub(:save).and_return(false)
             end
             it "should re-render the new view" do
+                movie.should_receive(:save)
                 post :create
-                expect(response).to render_template :new
+                response.should render_template action: 'new'
+                expect(flash[:notice]).not_to be_nil
             end
         end
     end
