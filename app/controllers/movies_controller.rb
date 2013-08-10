@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   def show
     id = params[:id] # retrieve movie ID from URI route
     @movie = Movie.find(id) # look up movie by unique ID
-    # will render app/views/movies/show.<extension> by default
+    render :show# will render app/views/movies/show.<extension> by default
   end
 
   def index
@@ -63,11 +63,10 @@ class MoviesController < ApplicationController
   end
 
   def same_director
-    p params
     movie_director = Movie.select(:director).where(
-            'director != :director_name AND title = :movie_title',
+            'director != :directors_name AND title = :movie_title',
                 { 
-                  director_name: '',
+                  directors_name: '',
                   movie_title: params[:title] 
                 }
           ).first
