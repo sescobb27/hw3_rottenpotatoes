@@ -1,16 +1,16 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/simon/Documents/Rails/hw3_rottenpotatoes/app/controllers/application_controller.rb": [
+      "/home/simon/Documents/Rails/hw3/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/simon/Documents/Rails/hw3_rottenpotatoes/app/helpers/application_helper.rb": [
+      "/home/simon/Documents/Rails/hw3/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/simon/Documents/Rails/hw3_rottenpotatoes/app/helpers/movies_helper.rb": [
+      "/home/simon/Documents/Rails/hw3/app/helpers/movies_helper.rb": [
         1,
         null,
         1,
@@ -18,7 +18,7 @@
         null,
         null
       ],
-      "/home/simon/Documents/Rails/hw3_rottenpotatoes/app/controllers/movies_controller.rb": [
+      "/home/simon/Documents/Rails/hw3/app/controllers/movies_controller.rb": [
         1,
         null,
         1,
@@ -100,7 +100,7 @@
         null,
         null
       ],
-      "/home/simon/Documents/Rails/hw3_rottenpotatoes/app/models/movie.rb": [
+      "/home/simon/Documents/Rails/hw3/app/models/movie.rb": [
         1,
         1,
         12,
@@ -108,20 +108,20 @@
         null
       ]
     },
-    "timestamp": 1376114166
+    "timestamp": 1376351391
   },
   "RSpec": {
     "coverage": {
-      "/home/simon/Documents/Rails/hw3_rottenpotatoes/app/controllers/application_controller.rb": [
+      "/home/simon/Documents/Rails/hw3/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/simon/Documents/Rails/hw3_rottenpotatoes/app/helpers/application_helper.rb": [
+      "/home/simon/Documents/Rails/hw3/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/simon/Documents/Rails/hw3_rottenpotatoes/app/helpers/movies_helper.rb": [
+      "/home/simon/Documents/Rails/hw3/app/helpers/movies_helper.rb": [
         1,
         null,
         1,
@@ -129,7 +129,7 @@
         null,
         null
       ],
-      "/home/simon/Documents/Rails/hw3_rottenpotatoes/app/controllers/movies_controller.rb": [
+      "/home/simon/Documents/Rails/hw3/app/controllers/movies_controller.rb": [
         1,
         null,
         1,
@@ -211,7 +211,7 @@
         null,
         null
       ],
-      "/home/simon/Documents/Rails/hw3_rottenpotatoes/app/models/movie.rb": [
+      "/home/simon/Documents/Rails/hw3/app/models/movie.rb": [
         1,
         1,
         0,
@@ -219,6 +219,6 @@
         null
       ]
     },
-    "timestamp": 1376114176
+    "timestamp": 1376351396
   }
 }

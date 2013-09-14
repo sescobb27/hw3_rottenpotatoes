@@ -1,7 +1,4 @@
 require 'spec_helper'
-def on_new
-    get :new
-end
 
 describe MoviesController do
     describe "GET #index" do
@@ -69,12 +66,6 @@ describe MoviesController do
             response.should render_template(:index)
             expect(assigns[:movies]).to eql([movies])
             
-        end
-        it "should order movies by title" do
-            pending
-        end
-        it "should filter movies" do
-            pending
         end
     end
 
